@@ -26,3 +26,40 @@ La lógica de la aplicación incluye:
 - Bloqueo y desbloqueo de cuentas: Se permitirá bloquear cuentas en caso de que sea necesario por seguridad.
 
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
+
+## Requisitos Funcionales
+
+### R1 - Registro de usuario
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                     |
+| **Entrada** 	   | - Nombre de usuario<br>-Contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña.<br>3. Se muestra el menú principal. 	 |
+                                                                                                                               
+
+### R2 - Cambio de contraseña
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que el usuario registrado cambie su contraseña por motivos de seguridad.                                                                                                                       |
+| **Entrada** 	   | - Nombre de usuario<br>- Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. Se regresa al menú principal	 |
+
+
+### R3 - Inicio de sesión
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que los usuarios registrados inicien sesión ingresando su nombre de usuario y contraseña para acceder a sus cuentas bancarias.                                                                                         |
+| **Entrada** 	   | - Nombre de usuario<br>- Contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1.  El sistema verifica las credenciales ingresadas.<br>2. Si la verificación es exitosa, se accede a la sesión del usuario.<br>3.Se muestra el menú de opciones del sistema.	 |
+
+
+### R4 - Creación de cuentas bancarias
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que los usuarios creen cuentas bancarias del tipo ahorros, corriente o inversión.                                                                                         |
+| **Entrada** 	   | - Tipo de cuenta a crear (Ahorros, Corriente, Inversión)<br>- Saldo inicial(Opcional)	                                                                                                                                                                  |
+| **Resultado** 	 | 1.  El sistema confirma la creación de la cuenta seleccionada.<br>2. La cuenta creada se agrega al perfil del usuario.<br>3. El saldo inicial se refleja en la nueva cuenta. |
