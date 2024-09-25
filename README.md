@@ -33,9 +33,9 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                       |
+| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                |
 | **Entrada** 	   | - Nombre de usuario   
-                     - Contraseña                                                                                                                                                                                      |
+                     - Contraseña                                                                                                                                                                                      
 | **Resultado** 	 | 1. El sistema confirma el registro mostrando un mensaje de bienvenida.
                      2. El usuario es agregado al sistema con su nombre de usuario y contraseña.
-                     3. Se muestra el menú principal. 	                                                                                                                                                                |
+                     3. Se muestra el menú principal. 	                                                                                                                                                               |
