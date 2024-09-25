@@ -46,6 +46,7 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Nombre de usuario<br>- Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. Se regresa al menú principal	 |
 
+
 ### R3 - Inicio de sesión
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
@@ -53,3 +54,12 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Resumen** 	   | El sistema debe permitir que los usuarios registrados inicien sesión ingresando su nombre de usuario y contraseña para acceder a sus cuentas bancarias.                                                                                         |
 | **Entrada** 	   | - Nombre de usuario<br>- Contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1.  El sistema verifica las credenciales ingresadas.<br>2. Si la verificación es exitosa, se accede a la sesión del usuario.<br>3.Se muestra el menú de opciones del sistema.	 |
+
+
+### R4 - Creación de cuentas bancarias
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que los usuarios creen cuentas bancarias del tipo ahorros, corriente o inversión.                                                                                         |
+| **Entrada** 	   | - Tipo de cuenta a crear (Ahorros, Corriente, Inversión)<br>- Saldo inicial(Opcional)	                                                                                                                                                                  |
+| **Resultado** 	 | 1.  El sistema confirma la creación de la cuenta seleccionada.<br>2. La cuenta creada se agrega al perfil del usuario.<br>3. El saldo inicial se refleja en la nueva cuenta. |
