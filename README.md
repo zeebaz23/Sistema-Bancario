@@ -24,4 +24,5 @@ La lógica de la aplicación incluye:
 - Consultas: Los usuarios podrán ver el saldo de sus cuentas y el historial de transacciones.
 - Generación de reportes: Se podrán generar reportes en formato PDF con información detallada sobre las cuentas y transacciones.
 - Bloqueo y desbloqueo de cuentas: Se permitirá bloquear cuentas en caso de que sea necesario por seguridad.
+
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
