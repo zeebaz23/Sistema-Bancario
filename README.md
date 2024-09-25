@@ -29,13 +29,11 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 
 ## Requisitos 
 
-### R1 - Registrar jugador
+### R1 - Registro de usuario
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                |
-| **Entrada** 	   | - Nombre de usuario   
-                     - Contraseña                                                                                                                                                                                      
-| **Resultado** 	 | 1. El sistema confirma el registro mostrando un mensaje de bienvenida.
-                     2. El usuario es agregado al sistema con su nombre de usuario y contraseña.
-                     3. Se muestra el menú principal. 	                                                                                                                                                               |
+| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                     |
+| **Entrada** 	   | - Nombre de usuario<br>-Contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña.<br>3. Se muestra el menú principal. 	 |
+                                                                                                                               |
