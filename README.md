@@ -26,3 +26,13 @@ La lógica de la aplicación incluye:
 - Bloqueo y desbloqueo de cuentas: Se permitirá bloquear cuentas en caso de que sea necesario por seguridad.
 
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
+
+## Requisitos funcionales
+
+### R1 - Registrar jugador
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir registrar un jugador para poder iniciar un juego 	                                                                                                                        |
+| **Entrada** 	   | - Nombre del jugador 	                                                                                                                                                                             |
+| **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El sistema carga 100 fichas al jugador<br>3. El sistema muestra un menú con las opciones de iniciar un nuevo juego o salir 	 |
