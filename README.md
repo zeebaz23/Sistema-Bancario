@@ -27,7 +27,7 @@ La lógica de la aplicación incluye:
 
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
 
-## Requisitos 
+## Requisitos Funcionales
 
 ### R1 - Registro de usuario
 
@@ -37,3 +37,11 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Nombre de usuario<br>-Contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña.<br>3. Se muestra el menú principal. 	 |
                                                                                                                                |
+
+### R2 - Cambio de contraseña
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que el usuario registrado cambie su contraseña por motivos de seguridad.                                                                                                                       |
+| **Entrada** 	   | - Nombre de usuario<br>-Contraseña actual<br>-Nueva contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. se regresa al menú principal	 |
