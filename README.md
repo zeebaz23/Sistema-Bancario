@@ -43,5 +43,13 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir que el usuario registrado cambie su contraseña por motivos de seguridad.                                                                                                                       |
-| **Entrada** 	   | - Nombre de usuario<br>-Contraseña actual<br>-Nueva contraseña 	                                                                                                                                                                             |
+| **Entrada** 	   | - Nombre de usuario<br>- Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. se regresa al menú principal	 |
+
+### R3 - Inicio de sesión
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir que los usuarios registrados inicien sesión ingresando su nombre de usuario y contraseña para acceder a sus cuentas bancarias.                                                                                         |
+| **Entrada** 	   | - Nombre de usuario<br>- Contraseña 	                                                                                                                                                                             |
+| **Resultado** 	 | 1.  El sistema verifica las credenciales ingresadas.<br>2. Si la verificación es exitosa, se accede a la sesión del usuario.<br>Se muestra el menú de opciones del sistema.	 |
