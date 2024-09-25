@@ -27,12 +27,15 @@ La lógica de la aplicación incluye:
 
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
 
-## Requisitos funcionales
+## Requisitos 
 
 ### R1 - Registrar jugador
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Resumen** 	   | El sistema debe permitir registrar un jugador para poder iniciar un juego 	                                                                                                                        |
-| **Entrada** 	   | - Nombre del jugador 	                                                                                                                                                                             |
-| **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El sistema carga 100 fichas al jugador<br>3. El sistema muestra un menú con las opciones de iniciar un nuevo juego o salir 	 |
+| **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                       |
+| **Entrada** 	   | - Nombre de usuario   
+                     - Contraseña                                                                                                                                                                                      |
+| **Resultado** 	 | 1. El sistema confirma el registro mostrando un mensaje de bienvenida.
+                     2. El usuario es agregado al sistema con su nombre de usuario y contraseña.
+                     3. Se muestra el menú principal. 	                                                                                                                                                                |
