@@ -9,6 +9,7 @@ Cuando arranca la aplicación, el sistema permite registrar nuevos usuarios medi
 - Cuentas de Ahorro: Cuentas en las que el usuario puede depositar dinero y generar intereses en el futuro.
 - Cuentas Corrientes: Cuentas que permiten transacciones frecuentes, como pagos y transferencias.
 - Cuentas de Inversión: Cuentas diseñadas para gestionar inversiones financieras.
+
 Una vez que el usuario ha iniciado sesión, puede consultar su saldo, ver el historial de transacciones de cada cuenta y realizar transacciones como transferencias entre sus propias cuentas o hacia cuentas de otros usuarios registrados en el sistema. El sistema también permite que los usuarios cambien su contraseña por motivos de seguridad.
 
 Además, el sistema brinda la opción de generar reportes financieros en formato PDF. Estos reportes contienen detalles sobre las cuentas del usuario, como el saldo actual y un historial completo de las transacciones realizadas. También se incluye la posibilidad de bloquear y desbloquear cuentas en caso de que se requiera una medida de seguridad adicional.
