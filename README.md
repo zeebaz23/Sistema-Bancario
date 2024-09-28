@@ -80,7 +80,7 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir a los usuarios consultar el saldo actual de cualquiera de sus cuentas bancarias.                                                                                     |
 | **Entrada** 	   | - Nombre de usuario.<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)                                                                                                                                                            |
-| **Resultado** 	 | 1. El sistema el saldo actual de la cuenta solicitada.<br>2.Si no se encuentra la cuenta, muestra un mensaje de error indicando que no existe de lo contrario muestra el saldo. |
+| **Resultado** 	 | 1. El sistema el saldo actual de la cuenta solicitada.<br>2. Si no se encuentra la cuenta, muestra un mensaje de error indicando que no existe de lo contrario muestra el saldo. |
 
 
 
@@ -89,7 +89,7 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir a los usuarios retirar dinero de cualquiera de sus cuentas bancarias, siempre que tengan suficiente saldo disponible.                                                                                     |
-| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto del retiro.                                                                                                                                                                 |
+| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto del retiro                                                                                                                                                                 |
 | **Resultado** 	 | 1. El sistema valida que la cuenta tiene fondos suficientes para el retiro.<br>2. Deduce el monto del saldo disponible.<br>3. Muestra mensaje de confirmación |
 
 
