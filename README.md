@@ -63,3 +63,49 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Resumen** 	   | El sistema debe permitir que los usuarios creen cuentas bancarias del tipo ahorros, corriente o inversión.                                                                                         |
 | **Entrada** 	   | - Tipo de cuenta a crear (Ahorros, Corriente, Inversión)<br>- Saldo inicial(Opcional)	                                                                                                                                                                  |
 | **Resultado** 	 | 1.  El sistema confirma la creación de la cuenta seleccionada.<br>2. La cuenta creada se agrega al perfil del usuario.<br>3. El saldo inicial se refleja en la nueva cuenta. |
+
+
+### R5 -  Realizar transacciones entre cuentas
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir a los usuarios realizar transacciones entre sus propias cuentas o enviar dinero a cuentas de otros usuarios del banco.                                                                                      |
+| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto de la transacción                                                                                                                                                                  |
+| **Resultado** 	 | 1. El sistema valida que la cuenta de origen tiene fondos suficientes.<br>2. Efectúa la transacción y actualiza el saldo de ambas cuentas.<br>3. Muestra mensaje de éxito. |
+
+
+### R6 - Mostrar saldo actual
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir a los usuarios consultar el saldo actual de cualquiera de sus cuentas bancarias.                                                                                     |
+| **Entrada** 	   | - Nombre de usuario.<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)                                                                                                                                                            |
+| **Resultado** 	 | 1. El sistema el saldo actual de la cuenta solicitada.<br>2.Si no se encuentra la cuenta, muestra un mensaje de error indicando que no existe de lo contrario muestra el saldo. |
+
+
+
+### R7 - Retirar dinero de una cuenta
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir a los usuarios retirar dinero de cualquiera de sus cuentas bancarias, siempre que tengan suficiente saldo disponible.                                                                                     |
+| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto del retiro.                                                                                                                                                                 |
+| **Resultado** 	 | 1. El sistema valida que la cuenta tiene fondos suficientes para el retiro.<br>2. Deduce el monto del saldo disponible.<br>3. Muestra mensaje de confirmación |
+
+
+### R8 -  Generar reporte de cuenta
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | 	El sistema debe permitir a los usuarios generar un reporte en formato PDF que incluya el saldo actual, el historial de transacciones y otros detalles de la cuenta bancaria.                     |
+| **Entrada** 	   | - Nombre de usuario<br>-Cuenta de destino<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)                                                                                                                                                            |
+| **Resultado** 	 | 1.  El sistema genera un archivo PDF con los detalles solicitados.<br>2. El sistema muestra un mensaje confirmando que el reporte ha sido creado y guardado exitosamente |
+
+
+### R9 - Bloquear y desbloquear cuentas
+
+| <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Resumen** 	   | El sistema debe permitir a los usuarios bloquear o desbloquear sus cuentas bancarias para evitar movimientos no autorizados.                                                                                      |
+| **Entrada** 	   | - Nombre de usuario<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)<br>-Acción (Bloquear o Desbloquear)                                                                                                                                              |
+| **Resultado** 	 | 1. El sistema bloquea o desbloquea la cuenta solicitada, según la acción seleccionada.<br>2.El sistema muestra un mensaje confirmando la acción realizada. |
