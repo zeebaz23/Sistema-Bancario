@@ -28,6 +28,11 @@ La lógica de la aplicación incluye:
 
 La idea es que la aplicación durante una sesión permita a los usuarios realizar todas estas operaciones y mostrarles la información de sus cuentas en cualquier momento. Se espera que el sistema se amplíe en futuras fases para incluir funcionalidades más avanzadas y una interfaz gráfica, proporcionando una experiencia de usuario más amigable.
 
+## Modelado del mundo
+![MODELADO drawio](https://github.com/user-attachments/assets/0bba29e6-4e60-4013-a954-956a66dbafd5)
+
+
+
 ## Requisitos Funcionales
 
 ### R1 - Registro de usuario
