@@ -36,6 +36,14 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                     |
 | **Entrada** 	   | - Nombre de usuario<br>-Contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña.<br>3. Se muestra el menú principal. 	 |
+
+#### Descomposición 
+
+| Paso              | Método                                        | Responsable       |
+|-------------------|-----------------------------------------------|-------------------|
+| Registrar usuario |registrar_usuario(nombre_usuario, contrasena)  | Sistema Bancario  |
+| Crear usuario     | __init__(nombre_usuario, contrasena)          | 	Usuario         |
+
                                                                                                                                
 
 ### R2 - Cambio de contraseña
