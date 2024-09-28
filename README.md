@@ -22,6 +22,7 @@ La lógica de la aplicación incluye:
 - Gestión de cuentas: Los usuarios podrán crear diferentes tipos de cuentas bancarias y ver los detalles de cada una de ellas.
 - Transacciones: Los usuarios podrán transferir dinero entre sus cuentas o a cuentas de otros usuarios.
 - Consultas: Los usuarios podrán ver el saldo de sus cuentas y el historial de transacciones.
+- Retiro de dinero: Los usuarios podrán retirar dinero de sus cuentas.
 - Generación de reportes: Se podrán generar reportes en formato PDF con información detallada sobre las cuentas y transacciones.
 - Bloqueo y desbloqueo de cuentas: Se permitirá bloquear cuentas en caso de que sea necesario por seguridad.
 
