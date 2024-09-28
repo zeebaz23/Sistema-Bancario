@@ -39,13 +39,14 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 
 #### Descomposición 
 
-| Paso              | Método                                        | Responsable       |
-|-------------------|-----------------------------------------------|-------------------|
-| Registrar usuario |registrar_usuario(nombre_usuario, contrasena)  | Sistema Bancario  |
-| Crear usuario     | __init__(nombre_usuario, contrasena)          | 	Usuario         |
+| Paso                                  | Método                                        | Responsable       |
+|---------------------------------------|-----------------------------------------------|-------------------|
+|Registrar usuario                      |registrar_usuario(nombre_usuario, contrasena)  | UIConsola         |
+|Verificar si el usuario ya existe      |registrar_usuario(nombre_usuario, contrasena)  | SistemaBancario   |
+|Agregar usuario a la base de datos     |registrar_usuario(nombre_usuario, contrasena)  | SistemaBancario   |
+|Retornar mensaje de éxito o error      |registrar_usuario(nombre_usuario, contrasena)  | UIConsola         |
 
                                                                                                                                
-
 ### R2 - Cambio de contraseña
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
@@ -54,6 +55,13 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Nombre de usuario<br>- Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. Se regresa al menú principal	 |
 
+| Paso                                         | Método                                                                 | Responsable       |
+|----------------------------------------------|------------------------------------------------------------------------|-------------------|
+|Solicitar nombre de usuario                   |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | UIConsola         |
+|Verificar si el usuario ya existe             |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
+|Verificar si la contraseña actual es correcta |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
+|Actualizar la contraseña en la base de datos  |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
+|Retornar mensaje de éxito o error             |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | UIConsola         |
 
 ### R3 - Inicio de sesión
 
@@ -62,6 +70,12 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Resumen** 	   | El sistema debe permitir que los usuarios registrados inicien sesión ingresando su nombre de usuario y contraseña para acceder a sus cuentas bancarias.                                                                                         |
 | **Entrada** 	   | - Nombre de usuario<br>- Contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1.  El sistema verifica las credenciales ingresadas.<br>2. Si la verificación es exitosa, se accede a la sesión del usuario.<br>3.Se muestra el menú de opciones del sistema.	 |
+
+| Paso                                         | Método                                    | Responsable       |
+|----------------------------------------------|-------------------------------------------|-------------------|
+|Solicitar nombre de usuario                   |iniciar_sesion(nombre_usuario, contrasena) | UIConsola         |
+|Verificar credenciales en la base de datos    |iniciar_sesion(nombre_usuario, contrasena) | SistemaBancario   |
+|Retornar resultado del inicio de sesión       |iniciar_sesion(nombre_usuario, contrasena) | UIConsola         |
 
 
 ### R4 - Creación de cuentas bancarias
@@ -72,6 +86,14 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Tipo de cuenta a crear (Ahorros, Corriente, Inversión)<br>- Saldo inicial(Opcional)	                                                                                                                                                                  |
 | **Resultado** 	 | 1.  El sistema confirma la creación de la cuenta seleccionada.<br>2. La cuenta creada se agrega al perfil del usuario.<br>3. El saldo inicial se refleja en la nueva cuenta. |
 
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar tipo de cuenta                       |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
+|Solicitar saldo inicial                        |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
+|Verificar si el usuario está registrado        |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
+|Crear nueva cuenta bancaria                    |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
+|Agregar la nueva cuenta a la lista del usuario |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
+|Retornar mensaje de éxito o error              |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
 
 ### R5 -  Realizar transacciones entre cuentas
 
