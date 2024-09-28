@@ -1,4 +1,4 @@
-from View.UIConsola import UIConsola
+from View.console import UIConsola
 
 if __name__ == "__main__":
     consola = UIConsola()

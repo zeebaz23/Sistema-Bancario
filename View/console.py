@@ -1,4 +1,5 @@
-from Model.banco import registrar_usuario, cambiar_contrasena, iniciar_sesion, crear_cuenta, usuarios
+from Model.banco import registrar_usuario, cambiar_contrasena, iniciar_sesion, crear_cuenta, mostrar_cuentas, usuarios
+
 
 class UIConsola:
     def ejecutar_app(self):
@@ -14,24 +15,37 @@ class UIConsola:
             opcion = input("Selecciona una opción: ")
 
             if opcion == "1":
-                nombre_usuario = input("Nombre de usuario: ")
-                contrasena = input("Contraseña: ")
-                registrar_usuario(nombre_usuario, contrasena)
+                self.registrar_usuario()
             elif opcion == "2":
-                nombre_usuario = input("Nombre de usuario: ")
-                contrasena = input("Contraseña: ")
-                if iniciar_sesion(nombre_usuario, contrasena):
-                    self.menu_sistema(nombre_usuario)
+                self.iniciar_sesion()
             elif opcion == "3":
-                nombre_usuario = input("Nombre de usuario: ")
-                contrasena_actual = input("Contraseña actual: ")
-                nueva_contrasena = input("Nueva contraseña: ")
-                cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena)
+                self.cambiar_contrasena()
             elif opcion == "4":
                 print("Saliendo del sistema. ¡Hasta luego!")
                 break
             else:
                 print("Opción no válida. Por favor intenta de nuevo.")
+
+    def registrar_usuario(self):
+        nombre_usuario = input("Nombre de usuario: ")
+        contrasena = input("Contraseña: ")
+        resultado = registrar_usuario(nombre_usuario, contrasena)
+        print(resultado)
+
+    def cambiar_contrasena(self):
+        nombre_usuario = input("Nombre de usuario: ")
+        contrasena_actual = input("Contraseña actual: ")
+        nueva_contrasena = input("Nueva contraseña: ")
+        resultado = cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena)
+        print(resultado)
+
+    def iniciar_sesion(self):
+        nombre_usuario = input("Nombre de usuario: ")
+        contrasena = input("Contraseña: ")
+        exito, mensaje = iniciar_sesion(nombre_usuario, contrasena)
+        print(mensaje)
+        if exito:
+            self.menu_sistema(nombre_usuario)
 
     def menu_sistema(self, nombre_usuario):
         while True:
@@ -42,17 +56,22 @@ class UIConsola:
             opcion = input("Selecciona una opción: ")
 
             if opcion == "1":
-                tipo_cuenta = input("Tipo de cuenta (Ahorros, Corriente, Inversión): ")
-                saldo_inicial = input("Saldo inicial (opcional, presiona Enter para dejar en 0): ")
-                saldo_inicial = float(saldo_inicial) if saldo_inicial else 0
-                crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial)
+                self.crear_cuenta(nombre_usuario)
             elif opcion == "2":
-                if nombre_usuario in usuarios:
-                    usuarios[nombre_usuario].mostrar_cuentas()
-                else:
-                    print("No se encontraron cuentas para este usuario.")
+                self.ver_cuentas(nombre_usuario)
             elif opcion == "3":
                 print(f"{nombre_usuario} ha cerrado sesión.")
                 break
             else:
                 print("Opción no válida. Por favor intenta de nuevo.")
+
+    def crear_cuenta(self, nombre_usuario):
+        tipo_cuenta = input("Tipo de cuenta (Ahorros, Corriente, Inversión): ")
+        saldo_inicial = input("Saldo inicial (opcional, presiona Enter para dejar en 0): ")
+        saldo_inicial = float(saldo_inicial) if saldo_inicial else 0
+        resultado = crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial)
+        print(resultado)
+
+    def ver_cuentas(self, nombre_usuario):
+        resultado = mostrar_cuentas(nombre_usuario)
+        print(resultado)
