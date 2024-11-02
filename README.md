@@ -41,16 +41,16 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir registrar un nuevo usuario para que pueda crear cuentas y realizar operaciones bancarias.                                                                                                                     |
 | **Entrada** 	   | - Nombre de usuario<br>-Contraseña 	                                                                                                                                                                             |
-| **Resultado** 	 | 1. El sistema muestra un mensaje dando la bienvenida al jugador<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña.<br>3. Se muestra el menú principal. 	 |
+| **Resultado** 	 | 1. El sistema muestra un mensaje de éxito o error.<br>2. El usuario es agregado al sistema con su nombre de usuario y contraseña si no existe previamente. n  <br>3. Se muestra el menú principal. 	 |
 
 #### Descomposición 
 
-| Paso                                  | Método                                        | Responsable       |
-|---------------------------------------|-----------------------------------------------|-------------------|
-|Registrar usuario                      |registrar_usuario(nombre_usuario, contrasena)  | UIConsola         |
-|Verificar si el usuario ya existe      |registrar_usuario(nombre_usuario, contrasena)  | SistemaBancario   |
-|Agregar usuario a la base de datos     |registrar_usuario(nombre_usuario, contrasena)  | SistemaBancario   |
-|Retornar mensaje de éxito o error      |registrar_usuario(nombre_usuario, contrasena)  | UIConsola         |
+| Paso                                    | Método                                        | Responsable       |
+|-----------------------------------------|-----------------------------------------------|-------------------|
+|Solicitar nombre de usuario y contraseña |mostrar_panel_registro()  | BancoGUI        |
+|Verificar si el usuario ya existe        |registrar_usuario(nombre_usuario, contrasena)  | banco.py |
+|Agregar usuario a la base de datos       |registrar_usuario(nombre_usuario, contrasena)  | banco.py   |
+|Retornar mensaje de éxito o error        |registrar_usuario()| BancoGUI     |
 
                                                                                                                                
 ### R2 - Cambio de contraseña
