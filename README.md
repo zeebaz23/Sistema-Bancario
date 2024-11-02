@@ -125,16 +125,26 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Nombre de usuario.<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)                                                                                                                                                            |
 | **Resultado** 	 | 1. El sistema el saldo actual de la cuenta solicitada.<br>2. Si no se encuentra la cuenta, muestra un mensaje de error indicando que no existe de lo contrario muestra el saldo. |
 
-
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar tipo de cuenta    |mostrar_panel_cuenta()| BancoGUI     |BancoGUI  | 
+|Retornar saldo o mensaje de error |consultar_saldo(nombre_usuario) | banco.py |
+|Verificar si la cuenta existe    |consultar_saldo() | BancoGUI  |
 
 ### R7 - Retirar dinero de una cuenta
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir a los usuarios retirar dinero de cualquiera de sus cuentas bancarias, siempre que tengan suficiente saldo disponible.                                                                                     |
-| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto del retiro                                                                                                                                                                 |
+| **Entrada** 	   |-Monto del retiro                                                                                                                                                                 |
 | **Resultado** 	 | 1. El sistema valida que la cuenta tiene fondos suficientes para el retiro.<br>2. Deduce el monto del saldo disponible.<br>3. Muestra mensaje de confirmación |
 
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar monto del retiro    |mostrar_panel_cuenta()| BancoGUI     |BancoGUI  
+| Verificar si la cuenta tiene fondos suficientes |retirar_dinero(nombre_usuario, monto) | banco.py|
+|Deducir el monto del saldo disponible    |retirar_dinero(nombre_usuario, monto) | banco.py  |
+|Retorna mensaje de éxito o error |retirar_dinero() | realizar_transaccion() |BancoGUI  
 
 ### R8 -  Generar reporte de cuenta
 
@@ -144,7 +154,12 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Entrada** 	   | - Nombre de usuario<br>-Cuenta de destino<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)                                                                                                                                                            |
 | **Resultado** 	 | 1.  El sistema genera un archivo PDF con los detalles solicitados.<br>2. El sistema muestra un mensaje confirmando que el reporte ha sido creado y guardado exitosamente |
 
-
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar tipo de cuenta   |mostrar_panel_cuenta()| BancoGUI     |BancoGUI  
+| Verificar si la cuenta existe |generar_reporte_pdf(nombre_usuario, tipo_cuenta) | banco.py|
+|Generar el archivo PDF con los detalles de la cuenta    |generar_reporte_pdf(nombre_usuario, tipo_cuenta) | banco.py  |
+|Retornar mensaje de confirmación |retirar_dinero() | generar_reporte_pdf()|BancoGUI  
 ### R9 - Bloquear y desbloquear cuentas
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
@@ -152,3 +167,10 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | **Resumen** 	   | El sistema debe permitir a los usuarios bloquear o desbloquear sus cuentas bancarias para evitar movimientos no autorizados.                                                                                      |
 | **Entrada** 	   | - Nombre de usuario<br>-Tipo de cuenta (Ahorros, Corriente, Inversión)<br>-Acción (Bloquear o Desbloquear)                                                                                                                                              |
 | **Resultado** 	 | 1. El sistema bloquea o desbloquea la cuenta solicitada, según la acción seleccionada.<br>2.El sistema muestra un mensaje confirmando la acción realizada. |
+
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar tipo de cuenta y acción (bloquear/desbloquear)   |mostrar_panel_cuenta()| BancoGUI     |BancoGUI  
+| Verificar si la cuenta existe |bloquear_desbloquear_cuenta(nombre_usuario, tipo_cuenta, accion) | banco.py|
+|Bloquear o desbloquear la cuenta    |bloquear_desbloquear_cuenta(nombre_usuario, tipo_cuenta, accion) | banco.py  |
+|Retornar mensaje de confirmación |retirar_dinero() | bloquear_desbloquear_cuenta() |BancoGUI  
