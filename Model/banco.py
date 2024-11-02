@@ -2,7 +2,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import os
 
-# Simulando una base de datos
+
 usuarios = {}
 cuentas = {}
 
@@ -47,7 +47,7 @@ def mostrar_cuentas(nombre_usuario):
 
 
 def realizar_transaccion(nombre_usuario, nombre_destino, monto):
-    cuenta_origen = f"{nombre_usuario}_Ahorros"  # Suponiendo que la cuenta origen es de tipo Ahorros
+    cuenta_origen = f"{nombre_usuario}_Ahorros"
     cuenta_destino = f"{nombre_destino}_Ahorros"
 
     if cuenta_origen not in cuentas:
@@ -102,5 +102,15 @@ def bloquear_desbloquear_cuenta(nombre_usuario, tipo_cuenta, accion):
     cuenta_id = f"{nombre_usuario}_{tipo_cuenta}"
     if cuenta_id not in cuentas:
         return "La cuenta no existe."
-    # Suponiendo que aquí se implementa la lógica de bloqueo/desbloqueo
-    return f"Cuenta {accion} con éxito."
+
+    if accion == "bloquear":
+        cuentas[cuenta_id]['bloqueada'] = True
+        return "Cuenta bloqueada con éxito."
+    elif accion == "desbloquear":
+        cuentas[cuenta_id]['bloqueada'] = False
+        return "Cuenta desbloqueada con éxito."
+    else:
+        return "Acción no válida."
+
+
+

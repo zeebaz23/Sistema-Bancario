@@ -24,6 +24,7 @@ class BancoGUI:
         self.cuenta_destino = tk.StringVar()
         self.monto_transaccion = tk.StringVar()
         self.monto_retiro = tk.StringVar()
+        self.accion_bloqueo = tk.StringVar()
 
         self.mostrar_menu_principal()
 
@@ -126,6 +127,8 @@ class BancoGUI:
         btn_generar_reporte = tk.Button(panel_reportes, text="Generar Reporte PDF", command=self.generar_reporte_pdf, width=20, bg="#FF5733", fg="white")
         btn_generar_reporte.pack(pady=5)
 
+
+
         panel_cambiar_contrasena = tk.LabelFrame(self.root, text="Cambiar Contraseña", padx=20, pady=20, bg="#f2f2f2", font=("Arial", 12))
         panel_cambiar_contrasena.pack(fill="both", padx=20, pady=10)
 
@@ -136,11 +139,25 @@ class BancoGUI:
         tk.Label(panel_cambiar_contrasena, text="Nueva Contraseña:", bg="#f2f2f2").grid(row=1, column=0, sticky="w")
         tk.Entry(panel_cambiar_contrasena, textvariable=self.contrasena_nueva, show="*", width=30).grid(row=1, column=1,
                                                                                                         padx=5, pady=5)
-
         btn_cambiar_contrasena = tk.Button(panel_cambiar_contrasena, text="Cambiar Contraseña",
                                            command=self.cambiar_contrasena, width=20, bg="#4CAF50", fg="white")
         btn_cambiar_contrasena.grid(row=2, columnspan=2, pady=5)
 
+        panel_bloqueo = tk.LabelFrame(self.root, text="Bloquear/Desbloquear Cuenta", padx=20, pady=20, bg="#f2f2f2",
+                                      font=("Arial", 12))
+        panel_bloqueo.pack(fill="both", padx=20, pady=10)
+
+        tk.Label(panel_bloqueo, text="Tipo de Cuenta:", bg="#f2f2f2").grid(row=0, column=0, sticky="w")
+        ttk.Combobox(panel_bloqueo, textvariable=self.tipo_cuenta, values=["Ahorros", "Corriente", "Inversión"],
+                     width=20).grid(row=0, column=1, padx=5, pady=5)
+
+        tk.Label(panel_bloqueo, text="Acción:", bg="#f2f2f2").grid(row=1, column=0, sticky="w")
+        ttk.Combobox(panel_bloqueo, textvariable=self.accion_bloqueo, values=["bloquear", "desbloquear"],
+                     width=20).grid(row=1, column=1, padx=5, pady=5)
+
+        btn_bloquear_desbloquear = tk.Button(panel_bloqueo, text="Ejecutar", command=self.bloquear_desbloquear_cuenta,
+                                             width=15, bg="#FF5733", fg="white")
+        btn_bloquear_desbloquear.grid(row=0, column=2, rowspan=2, padx=5, pady=5)
         btn_cerrar_sesion = tk.Button(self.root, text="Cerrar Sesión", command=self.cerrar_sesion, width=20,
                                       bg="#f44336", fg="white")
         btn_cerrar_sesion.pack(pady=10)
@@ -210,6 +227,12 @@ class BancoGUI:
         tipo = self.tipo_cuenta.get()
         mensaje = generar_reporte_pdf(nombre, tipo)
         messagebox.showinfo("Reporte PDF", mensaje)
+
+    def bloquear_desbloquear_cuenta(self):
+        tipo_cuenta = self.tipo_cuenta.get()
+        accion = self.accion_bloqueo.get()
+        mensaje = bloquear_desbloquear_cuenta(self.usuario_actual, tipo_cuenta, accion)
+        messagebox.showinfo("Bloquear/Desbloquear Cuenta", mensaje)
 
     def cerrar_sesion(self):
         self.usuario_actual = None
