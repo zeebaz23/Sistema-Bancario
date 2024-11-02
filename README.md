@@ -58,16 +58,16 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir que el usuario registrado cambie su contraseña por motivos de seguridad.                                                                                                                       |
-| **Entrada** 	   | - Nombre de usuario<br>- Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
+| **Entrada** 	   | - Contraseña actual<br>- Nueva contraseña 	                                                                                                                                                                             |
 | **Resultado** 	 | 1. El sistema verifica la contraseña actual.<br>2. Si la verificación es exitosa, el sistema actualiza la contraseña y muestra un mensaje de confirmación.<br>3. Se regresa al menú principal	 |
 
 | Paso                                         | Método                                                                 | Responsable       |
 |----------------------------------------------|------------------------------------------------------------------------|-------------------|
-|Solicitar nombre de usuario                   |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | UIConsola         |
-|Verificar si el usuario ya existe             |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
-|Verificar si la contraseña actual es correcta |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
-|Actualizar la contraseña en la base de datos  |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | SistemaBancario   |
-|Retornar mensaje de éxito o error             |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | UIConsola         |
+|Solicitar contraseña actual                      |mostrar_panel_cuenta() | BancoGUI     |
+|Verificar si el usuario ya existe             |cambiar_contrasena(nombre_usuario, contrasena_actual, contrasena_nueva) | banco.py  |
+|Verificar si la contraseña actual es correcta |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | banco.py   |
+|Actualizar la contraseña en la base de datos  |cambiar_contrasena(nombre_usuario, contrasena_actual, nueva_contrasena) | banco.py  |
+|Retornar mensaje de éxito o error             |cambiar_contrasena() | BancoGUI        |
 
 ### R3 - Inicio de sesión
 
@@ -79,9 +79,9 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 
 | Paso                                         | Método                                    | Responsable       |
 |----------------------------------------------|-------------------------------------------|-------------------|
-|Solicitar nombre de usuario                   |iniciar_sesion(nombre_usuario, contrasena) | UIConsola         |
-|Verificar credenciales en la base de datos    |iniciar_sesion(nombre_usuario, contrasena) | SistemaBancario   |
-|Retornar resultado del inicio de sesión       |iniciar_sesion(nombre_usuario, contrasena) | UIConsola         |
+|Solicitar nombre de usuario                   |mostrar_panel_sesion()| BancoGUI      |
+|Verificar credenciales en la base de datos    |iniciar_sesion(nombre_usuario, contrasena) | banco.py   |
+|Retornar resultado del inicio de sesión       |iniciar_sesion() | BancoGUI   |
 
 
 ### R4 - Creación de cuentas bancarias
@@ -94,20 +94,27 @@ La idea es que la aplicación durante una sesión permita a los usuarios realiza
 
 | Paso                                          | Método                                                  | Responsable       |
 |-----------------------------------------------|---------------------------------------------------------|-------------------|
-|Solicitar tipo de cuenta                       |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
-|Solicitar saldo inicial                        |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
-|Verificar si el usuario está registrado        |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
-|Crear nueva cuenta bancaria                    |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
-|Agregar la nueva cuenta a la lista del usuario |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | SistemaBancario   |
-|Retornar mensaje de éxito o error              |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | UIConsola         |
+|Solicitar tipo de cuenta y saldo inicia                      |mostrar_panel_cuenta()| BancoGUI     |
+|Verificar si el usuario está registrado                      |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | BancoGUI        |
+|Crear nueva cuenta bancaria      |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | banco.py  |
+|Agregar la nueva cuenta a la lista del usuario                |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | banco.py   |
+|Retorna mensaje de éxito o error |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | crear_cuenta() |
+
 
 ### R5 -  Realizar transacciones entre cuentas
 
 | <!-- --> 	      | <!-- --> 	                                                                                                                                                                                         |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Resumen** 	   | El sistema debe permitir a los usuarios realizar transacciones entre sus propias cuentas o enviar dinero a cuentas de otros usuarios del banco.                                                                                      |
-| **Entrada** 	   | - Cuenta de origen<br>-Cuenta de destino<br>-Monto de la transacción                                                                                                                                                                  |
+| **Entrada** 	   |-Cuenta de destino<br>-Monto de la transacción                                                                                                                                                                  |
 | **Resultado** 	 | 1. El sistema valida que la cuenta de origen tiene fondos suficientes.<br>2. Efectúa la transacción y actualiza el saldo de ambas cuentas.<br>3. Muestra mensaje de éxito. |
+
+| Paso                                          | Método                                                  | Responsable       |
+|-----------------------------------------------|---------------------------------------------------------|-------------------|
+|Solicitar cuenta de destino y monto de la transacción    |mostrar_panel_cuenta()| BancoGUI     |BancoGUI  
+| Verificar si la cuenta tiene fondos suficientes |realizar_transaccion(nombre_usuario, nombre_destino, monto) | BancoGUI |
+|Efectuar la transacción y actualizar saldos     |realizar_transaccion(nombre_usuario, nombre_destino, monto) | banco.py  |
+|Retorna mensaje de éxito o error |crear_cuenta(nombre_usuario, tipo_cuenta, saldo_inicial) | realizar_transaccion() |BancoGUI  
 
 
 ### R6 - Mostrar saldo actual
